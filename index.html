@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+
+<link href="style.css?version=1" rel="stylesheet" type="text/css">
+
+
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+  <title>Click-a-zoo</title>
+</head>
+
+<div class="navbar">
+    <img src="pics\duck1.png" alt="Duck Logo">
+    <h1>Click-a-zoo</h1>
+    
+    <div class="dropdown">
+        <button class="dropdownbtn">
+          <i class="fa fa-list-ul"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#" onclick="goHome()">Home</a>
+          <a href="#" onclick="goStats()">Stats</a>
+          <a href="#" onclick="goOptions()">Options</a>
+          <a href="#" onclick="goHelp()">Help</a>
+        </div>
+    </div>
+    <div id="cashTitle">
+        <i class="fas fa-money-bill-wave"></i> 
+        <p id=cashText>£0</p>
+      </div>
+</div>
+
+<div id="resources">
+    <h2>Resources</h2>
+    <table>
+        <tr id="food">
+            <td><img src="pics\food.png"></td>
+            <td><button onclick="gather(food)">Gather</button></td>
+            <td><p class="resourceNumber">0</p></td>
+            <td><p class="resourceStorage">Storage limit (100)</p></td>
+            <td><p class="resourceaSecond">0.0/s</p></td>
+        </tr>
+        <tr id="food">
+                <td><img src="pics\water.png"></td>
+                <td><button onclick="gather(food)">Gather</button></td>
+                <td><p class="resourceNumber">0</p></td>
+                <td><p class="resourceStorage">Storage limit (100)</p></td>
+                <td><p class="resourceaSecond">0.0/s</p></td>
+            </tr>
+        <tr id="food">
+            <td><img src="pics\stone.png"></td>
+            <td><button onclick="gather(food)">Gather</button></td>
+            <td><p class="resourceNumber">0</p></td>
+            <td><p class="resourceStorage">Storage limit (100)</p></td>
+            <td><p class="resourceaSecond">0.0/s</p></td>
+        </tr>
+        <tr id="food">
+                <td><img src="pics\wood.png"></td>
+                <td><button onclick="gather(food)">Gather</button></td>
+                <td><p class="resourceNumber">0</p></td>
+                <td><p class="resourceStorage">Storage limit (100)</p></td>
+                <td><p class="resourceaSecond">0.0/s</p></td>
+            </tr>
+
+    </table>
+</div>
+
+
+<div id=staff>
+    <h2>Zoo Staff</h2>
+    <button id="buyStaff">Buy Staff £5</button> 
+    <p>Unused: 0</p>
+    <table>
+        <tr id=foodStaff>
+            <td><button onclick="staff(foodStaff, -100)">-100</button></td>
+            <td><button onclick="staff(foodStaff, -10)">-10</button></td>
+            <td><button onclick="staff(foodStaff, -1)">-1</button></td>
+            <td><p>Food Collector: <b>0</b></p></td>
+            <td><button onclick="staff(foodStaff, 1)">+1</button></td>
+            <td><button onclick="staff(foodStaff, 10)">+10</button></td>
+            <td><button onclick="staff(foodStaff, 100)">+100</button></td>
+        </tr>
+        <tr id=waterStaff>
+            <td><button onclick="staff(waterStaff, -100)">-100</button></td>
+            <td><button onclick="staff(waterStaff, -10)">-10</button></td>
+            <td><button onclick="staff(waterStaff, -1)">-1</button></td>
+            <td><p>Water Collector: 0</p></td>
+            <td><button onclick="staff(waterStaff, 1)">+1</button></td>
+            <td><button onclick="staff(waterStaff, 10)">+10</button></td>
+            <td><button onclick="staff(waterStaff, 100)">+100</button></td>
+        </tr>
+        <tr id=stoneStaff>
+            <td><button onclick="staff(stoneStaff, -100)">-100</button></td>
+            <td><button onclick="staff(stoneStaff, -10)">-10</button></td>
+            <td><button onclick="staff(stoneStaff, -1)">-1</button></td>
+            <td><p>Stone Collector: 0</p></td>
+            <td><button onclick="staff(stoneStaff, 1)">+1</button></td>
+            <td><button onclick="staff(stoneStaff, 10)">+10</button></td>
+            <td><button onclick="staff(stoneStaff, 100)">+100</button></td>
+        </tr>
+        <tr id=woodStaff>
+            <td><button onclick="staff(woodStaff, -100)">-100</button></td>
+            <td><button onclick="staff(woodStaff, -10)">-10</button></td>
+            <td><button onclick="staff(woodStaff, -1)">-1</button></td>
+            <td><p>Wood Collector: 0</p></td>
+            <td><button onclick="staff(woodStaff, 1)">+1</button></td>
+            <td><button onclick="staff(woodStaff, 10)">+10</button></td>
+            <td><button onclick="staff(woodStaff, 100)">+100</button></td>
+        </tr>
+    </table>
+</div>
+
+<div style="clear: both;"></div>
+
+<div id="animals">
+    <h1>Animals</h1>
+
+    <div class="animal">
+        <div class="animalLeft">
+            <p>Flamingo</p>
+            <div><img src="pics\duck1.png"></div>
+        </div>
+
+        <div class="animalRight">
+            <div class="animalrightUp">  
+                <button class="animalBuy"><i class="fas fa-money-bill-wave"></i>£5</button>
+                <button class="increments incrementsRight" onclick="staff(foodStaff, 10)">+10</button>
+                <button class="increments incrementsRight" onclick="staff(foodStaff, 100)">+100</button>  
+
+                <button class="animalShelter"><i class="fas fa-home"></i>Build Shelter</button>
+                <button class="increments incrementsLeft" onclick="staff(foodStaff, 10)">+10</button>
+                <button class="increments incrementsLeft" onclick="staff(foodStaff, 100)">+100</button>
+
+                <button class="animalEnrichment"><i class="fas fa-star"></i>Build Enrichment</button>
+                <button class="increments incrementsLeft" onclick="staff(foodStaff, 10)">+10</button>
+                <button class="increments incrementsLeft" onclick="staff(foodStaff, 100)">+100</button>
+
+                <div style="clear: both;"></div>
+               
+                <p><i class="fas fa-home"></i> Total Shelters: <b>0</b>, <i class="fas fa-star"></i> Enrichments unlocked: <b>0</b>, Profit per animal: <b>£1.00</b></p>
+                
+                
+                <p>Total profit from animal: <b>£0.00</b>, Profit/s: <b>£1.00</b></p>
+
+            </div>
+
+            <div class="animalrightDown">
+                <table>
+                    <tr>
+                        <td><img src="pics\resourceplaceholder.png"> requires</td>
+                        <td><img src="pics\resourceplaceholder.png"> requires</td>
+                        <td><img src="pics\resourceplaceholder.png"> requires</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>0.1 Food/s</li>
+                                <li>0.1 Water/s</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>1 Wood</li>
+                                <li>1 Stone</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>£10</li>
+                                <li>10 Wood</li>
+                                <li>10 Stone</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="zooclicker.js?version=1"></script>
