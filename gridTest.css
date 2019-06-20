@@ -1,0 +1,140 @@
+.animal {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.7fr 1.3fr 1fr;
+    grid-template-rows:  0.3fr 1.3fr 1.7fr;
+    grid-template-areas: "animalInfo animalShelter animalShelter animalBuy animalBuy" "animalInfo animalEnrichment animalEnrichment animalStats animalStats" "animalInfo animalRequirements animalRequirements animalRequirements animalRequirements";
+    border: 4px solid black;
+    width: 80%;
+    min-height: 250px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #9dcd7c;
+}
+  
+.animalBuy { grid-area: animalBuy; }
+
+.animalInfo { 
+    grid-area: animalInfo;
+    border-right: 6px solid black;
+    background: #0b73fa;
+    box-sizing: border-box;
+}
+
+.animalInfo .animalName {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 15px;
+    padding: 5px 0px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.animalInfo .animalNumber {
+    padding: 20px 0px;
+    font-size: 1.4em;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.animalInfo img {
+    height: 175px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+}
+
+
+
+.animalEnrichment { grid-area: animalEnrichment; }
+
+.animalShelter { grid-area: animalShelter; }
+
+.animalRequirements { 
+    grid-area: animalRequirements;
+    border-top: 3px solid black;
+}
+
+.animalRequirements img {
+    width: 46px;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.animalRequirements Table {
+    width: 90%;
+    margin: auto;
+}
+
+.animalStats { grid-area: animalStats; }
+
+
+.animalShelterB{
+    float: left;
+    margin: 8px;
+    padding: 5px 12px;
+    font-size: 1.2em;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #0b73fa;
+    color: black;
+  }
+
+  .animalShelterB i {
+    padding-right: 10px;
+    color: rgb(139, 66, 16);
+  }
+
+  .animalEnrichmentB {
+    float: left;
+    margin: 8px;
+    padding: 5px 12px;
+    font-size: 1.2em;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #0b73fa;
+    color: black;
+  }
+
+  .animalEnrichmentB i {
+    padding-right: 10px;
+    color: yellow;
+  }
+
+  .animalBuyB {
+    float: right;
+    margin: 8px;
+    padding: 4px 20px;
+    font-size: 1.3em;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #0b73fa;
+    color: black;
+  }
+
+  .animalBuyB i {
+    padding-right: 10px;
+    color: #37c027;
+  }
+
+  .increments {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 5px;
+  }
+
+  .incrementsRight {
+    float: right;
+    margin: 12px 2px 0px 2px;
+  }
+
+  .incrementsLeft {
+    float: left;
+    margin: 12px 2px 0px 2px;
+  }

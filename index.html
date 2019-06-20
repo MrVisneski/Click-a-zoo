@@ -39,28 +39,28 @@
             <td><img src="pics\food.png"></td>
             <td><button onclick="gather(food)">Gather</button></td>
             <td><p class="resourceNumber">0</p></td>
-            <td><p class="resourceStorage">Storage limit (100)</p></td>
+            <td><p class="resourceStorage">Storage limit (1000)</p></td>
             <td><p class="resourceaSecond">0.0/s</p></td>
         </tr>
-        <tr id="food">
+        <tr id="water">
                 <td><img src="pics\water.png"></td>
-                <td><button onclick="gather(food)">Gather</button></td>
+                <td><button onclick="gather(water)">Gather</button></td>
                 <td><p class="resourceNumber">0</p></td>
-                <td><p class="resourceStorage">Storage limit (100)</p></td>
+                <td><p class="resourceStorage">Storage limit (1000)</p></td>
                 <td><p class="resourceaSecond">0.0/s</p></td>
             </tr>
-        <tr id="food">
+        <tr id="stone">
             <td><img src="pics\stone.png"></td>
-            <td><button onclick="gather(food)">Gather</button></td>
+            <td><button onclick="gather(stone)">Gather</button></td>
             <td><p class="resourceNumber">0</p></td>
-            <td><p class="resourceStorage">Storage limit (100)</p></td>
+            <td><p class="resourceStorage">Storage limit (1000)</p></td>
             <td><p class="resourceaSecond">0.0/s</p></td>
         </tr>
-        <tr id="food">
+        <tr id="wood">
                 <td><img src="pics\wood.png"></td>
-                <td><button onclick="gather(food)">Gather</button></td>
+                <td><button onclick="gather(wood)">Gather</button></td>
                 <td><p class="resourceNumber">0</p></td>
-                <td><p class="resourceStorage">Storage limit (100)</p></td>
+                <td><p class="resourceStorage">Storage limit (1000)</p></td>
                 <td><p class="resourceaSecond">0.0/s</p></td>
             </tr>
 
@@ -70,44 +70,46 @@
 
 <div id=staff>
     <h2>Zoo Staff</h2>
-    <button id="buyStaff">Buy Staff £5</button> 
-    <p>Unused: 0</p>
+    <button id="buyStaff" onclick="buyStaff(1)">Buy Staff £5</button>
+    <button class="staffIncremental" onclick="buyStaff(10)">+10</button>
+    <button class="staffIncremental" onclick="buyStaff(100)">+100</button>
+    <p id="unusedStaff"> Unused: 0</p>
     <table>
         <tr id=foodStaff>
-            <td><button onclick="staff(foodStaff, -100)">-100</button></td>
-            <td><button onclick="staff(foodStaff, -10)">-10</button></td>
-            <td><button onclick="staff(foodStaff, -1)">-1</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('foodStaff', -100)">-100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('foodStaff', -10)">-10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('foodStaff', -1)">-1</button></td>
             <td><p>Food Collector: <b>0</b></p></td>
-            <td><button onclick="staff(foodStaff, 1)">+1</button></td>
-            <td><button onclick="staff(foodStaff, 10)">+10</button></td>
-            <td><button onclick="staff(foodStaff, 100)">+100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('foodStaff', 1)">+1</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('foodStaff', 10)">+10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('foodStaff', 100)">+100</button></td>
         </tr>
         <tr id=waterStaff>
-            <td><button onclick="staff(waterStaff, -100)">-100</button></td>
-            <td><button onclick="staff(waterStaff, -10)">-10</button></td>
-            <td><button onclick="staff(waterStaff, -1)">-1</button></td>
-            <td><p>Water Collector: 0</p></td>
-            <td><button onclick="staff(waterStaff, 1)">+1</button></td>
-            <td><button onclick="staff(waterStaff, 10)">+10</button></td>
-            <td><button onclick="staff(waterStaff, 100)">+100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('waterStaff', -100)">-100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('waterStaff', -10)">-10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('waterStaff', -1)">-1</button></td>
+            <td><p>Water Collector: <b>0</b></p></td>
+            <td><button class="staffIncremental" onclick="setStaff('waterStaff', 1)">+1</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('waterStaff', 10)">+10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('waterStaff', 100)">+100</button></td>
         </tr>
         <tr id=stoneStaff>
-            <td><button onclick="staff(stoneStaff, -100)">-100</button></td>
-            <td><button onclick="staff(stoneStaff, -10)">-10</button></td>
-            <td><button onclick="staff(stoneStaff, -1)">-1</button></td>
-            <td><p>Stone Collector: 0</p></td>
-            <td><button onclick="staff(stoneStaff, 1)">+1</button></td>
-            <td><button onclick="staff(stoneStaff, 10)">+10</button></td>
-            <td><button onclick="staff(stoneStaff, 100)">+100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('stoneStaff', -100)">-100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('stoneStaff', -10)">-10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('stoneStaff', -1)">-1</button></td>
+            <td><p>Stone Collector: <b>0</b></p></td>
+            <td><button class="staffIncremental" onclick="setStaff('stoneStaff', 1)">+1</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('stoneStaff', 10)">+10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('stoneStaff', 100)">+100</button></td>
         </tr>
         <tr id=woodStaff>
-            <td><button onclick="staff(woodStaff, -100)">-100</button></td>
-            <td><button onclick="staff(woodStaff, -10)">-10</button></td>
-            <td><button onclick="staff(woodStaff, -1)">-1</button></td>
-            <td><p>Wood Collector: 0</p></td>
-            <td><button onclick="staff(woodStaff, 1)">+1</button></td>
-            <td><button onclick="staff(woodStaff, 10)">+10</button></td>
-            <td><button onclick="staff(woodStaff, 100)">+100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('woodStaff', -100)">-100</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('woodStaff', -10)">-10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('woodStaff', -1)">-1</button></td>
+            <td><p>Wood Collector: <b>0</b></p></td>
+            <td><button class="staffIncremental" onclick="setStaff('woodStaff', 1)">+1</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('woodStaff', 10)">+10</button></td>
+            <td><button class="staffIncremental" onclick="setStaff('woodStaff', 100)">+100</button></td>
         </tr>
     </table>
 </div>
@@ -117,65 +119,132 @@
 <div id="animals">
     <h1>Animals</h1>
 
-    <div class="animal">
-        <div class="animalLeft">
-            <p>Flamingo</p>
-            <div><img src="pics\duck1.png"></div>
+    <div class="animal" id="butterfly">
+        <div class="animalBuy">
+            <button class="animalBuyB" onclick="buyAnimal(butterfly, 1)"><i class="fas fa-money-bill-wave"></i>£5</button>
+            <button class="increments incrementsRight" onclick="buyAnimal(butterfly, 10)">+10</button>
+            <button class="increments incrementsRight" onclick="buyAnimal(butterfly, 100)">+100</button> 
         </div>
+    
+        <div class="animalInfo">
+            <p class="animalName">Butterfly</p>
+            <img src="pics\duck1.png">
+            <p class="animalNumber">0</p>
+        </div>
+    
+        <div class="animalEnrichment">
+            <button class="animalEnrichmentB" onclick="buyEnrichment(butterfly, 1)"><i class="fas fa-star"></i>Build Enrichment</button>
+            <button class="increments incrementsLeft" onclick="buyEnrichment(butterfly, 10)">+10</button>
+            <button class="increments incrementsLeft" onclick="buyEnrichment(butterfly, 100)">+100</button>
+        </div>
+    
+        <div class="animalShelter">
+            <button class="animalShelterB" onclick="buyShelter(butterfly, 1)"><i class="fas fa-home"></i>Build Shelter</button>
+            <button class="increments incrementsLeft" onclick="buyShelter(butterfly, 10)">+10</button>
+            <button class="increments incrementsLeft" onclick="buyShelter(butterfly, 100)">+100</button>
+        </div>
+    
+        <div class="animalRequirements">
+            <table>
+                <tr>
+                    <td><img src="pics\resourceplaceholder.png"> requires</td>
+                    <td><img src="pics\resourceplaceholder.png"> requires</td>
+                    <td><img src="pics\resourceplaceholder.png"> requires</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>0.1 Food/s</li>
+                            <li>0.1 Water/s</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>1 Wood</li>
+                            <li>1 Stone</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>£10</li>
+                            <li>10 Wood</li>
+                            <li>10 Stone</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="animalStats">
+            <p><i class="fas fa-home"></i> Total Shelters: <b>0</b>, <i class="fas fa-star"></i> Enrichments unlocked: <b>0</b>, Profit per animal: <b>£1.00</b></p>
+            <p>Total profit from animal: <b>£0.00</b>, Profit/s: <b>£1.00</b></p>
+        </div>
+      </div>
+    
+    <div class="animalUnlock" id="meerkatUnlock" style="display: block">
+        <p>Unlock Meerkats</p>
+        <button onclick="unlockAnimal(meerkat)">£200</button>
+    </div>
 
-        <div class="animalRight">
-            <div class="animalrightUp">  
-                <button class="animalBuy"><i class="fas fa-money-bill-wave"></i>£5</button>
-                <button class="increments incrementsRight" onclick="staff(foodStaff, 10)">+10</button>
-                <button class="increments incrementsRight" onclick="staff(foodStaff, 100)">+100</button>  
-
-                <button class="animalShelter"><i class="fas fa-home"></i>Build Shelter</button>
-                <button class="increments incrementsLeft" onclick="staff(foodStaff, 10)">+10</button>
-                <button class="increments incrementsLeft" onclick="staff(foodStaff, 100)">+100</button>
-
-                <button class="animalEnrichment"><i class="fas fa-star"></i>Build Enrichment</button>
-                <button class="increments incrementsLeft" onclick="staff(foodStaff, 10)">+10</button>
-                <button class="increments incrementsLeft" onclick="staff(foodStaff, 100)">+100</button>
-
-                <div style="clear: both;"></div>
-               
-                <p><i class="fas fa-home"></i> Total Shelters: <b>0</b>, <i class="fas fa-star"></i> Enrichments unlocked: <b>0</b>, Profit per animal: <b>£1.00</b></p>
-                
-                
-                <p>Total profit from animal: <b>£0.00</b>, Profit/s: <b>£1.00</b></p>
-
-            </div>
-
-            <div class="animalrightDown">
-                <table>
-                    <tr>
-                        <td><img src="pics\resourceplaceholder.png"> requires</td>
-                        <td><img src="pics\resourceplaceholder.png"> requires</td>
-                        <td><img src="pics\resourceplaceholder.png"> requires</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul>
-                                <li>0.1 Food/s</li>
-                                <li>0.1 Water/s</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>1 Wood</li>
-                                <li>1 Stone</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>£10</li>
-                                <li>10 Wood</li>
-                                <li>10 Stone</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+    <div class="animal" id="meerkat" style="display: none">
+        <div class="animalBuy">
+            <button class="animalBuyB" onclick="buyAnimal(meerkat, 1)"><i class="fas fa-money-bill-wave"></i>£15</button>
+            <button class="increments incrementsRight" onclick="buyAnimal(meerkat, 10)">+10</button>
+            <button class="increments incrementsRight" onclick="buyAnimal(meerkat, 100)">+100</button> 
+        </div>
+    
+        <div class="animalInfo">
+            <p class="animalName">Meerkat</p>
+            <img src="pics\duck1.png">
+            <p class="animalNumber">0</p>
+        </div>
+    
+        <div class="animalEnrichment">
+            <button class="animalEnrichmentB" onclick="buyEnrichment(meerkat, 1)"><i class="fas fa-star"></i>Build Enrichment</button>
+            <button class="increments incrementsLeft" onclick="buyEnrichment(meerkat, 10)">+10</button>
+            <button class="increments incrementsLeft" onclick="buyEnrichment(meerkat, 100)">+100</button>
+        </div>
+    
+        <div class="animalShelter">
+            <button class="animalShelterB" onclick="buyShelter(meerkat, 1)"><i class="fas fa-home"></i>Build Shelter</button>
+            <button class="increments incrementsLeft" onclick="buyShelter(meerkat, 10)">+10</button>
+            <button class="increments incrementsLeft" onclick="buyShelter(meerkat, 100)">+100</button>
+        </div>
+    
+        <div class="animalRequirements">
+            <table>
+                <tr>
+                    <td><img src="pics\resourceplaceholder.png"> requires</td>
+                    <td><img src="pics\resourceplaceholder.png"> requires</td>
+                    <td><img src="pics\resourceplaceholder.png"> requires</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>0.5 Food/s</li>
+                            <li>0.5 Water/s</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>10 Wood</li>
+                            <li>10 Stone</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>£100</li>
+                            <li>100 Wood</li>
+                            <li>100 Stone</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="animalStats">
+            <p><i class="fas fa-home"></i> Total Shelters: <b>0</b>, <i class="fas fa-star"></i> Enrichments unlocked: <b>0</b>, Profit per animal: <b>£1.00</b></p>
+            <p>Total profit from animal: <b>£0.00</b>, Profit/s: <b>£1.00</b></p>
         </div>
     </div>
 

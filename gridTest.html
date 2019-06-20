@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<link href="gridTest.css?version=1" rel="stylesheet" type="text/css">
+
+
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+  <title>Click-a-zoo</title>
+</head>
+
+<div class="animal">
+    <div class="animalBuy">
+        <button class="animalBuyB"><i class="fas fa-money-bill-wave"></i>£5</button>
+        <button class="increments incrementsRight" onclick="staff(foodStaff, 10)">+10</button>
+        <button class="increments incrementsRight" onclick="staff(foodStaff, 100)">+100</button> 
+    </div>
+
+    <div class="animalInfo">
+        <p class="animalName">Flamingo</p>
+        <img src="pics\duck1.png">
+        <p class="animalNumber">100</p>
+    </div>
+
+    <div class="animalEnrichment">
+        <button class="animalEnrichmentB"><i class="fas fa-star"></i>Build Enrichment</button>
+        <button class="increments incrementsLeft" onclick="staff(foodStaff, 10)">+10</button>
+        <button class="increments incrementsLeft" onclick="staff(foodStaff, 100)">+100</button>
+    </div>
+
+    <div class="animalShelter">
+        <button class="animalShelterB"><i class="fas fa-home"></i>Build Shelter</button>
+        <button class="increments incrementsLeft" onclick="staff(foodStaff, 10)">+10</button>
+        <button class="increments incrementsLeft" onclick="staff(foodStaff, 100)">+100</button>
+    </div>
+
+    <div class="animalRequirements">
+        <table>
+            <tr>
+                <td><img src="pics\resourceplaceholder.png"> requires</td>
+                <td><img src="pics\resourceplaceholder.png"> requires</td>
+                <td><img src="pics\resourceplaceholder.png"> requires</td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>0.1 Food/s</li>
+                        <li>0.1 Water/s</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>1 Wood</li>
+                        <li>1 Stone</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>£10</li>
+                        <li>10 Wood</li>
+                        <li>10 Stone</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="animalStats">
+        <p><i class="fas fa-home"></i> Total Shelters: <b>0</b>, <i class="fas fa-star"></i> Enrichments unlocked: <b>0</b>, Profit per animal: <b>£1.00</b></p>
+        <p>Total profit from animal: <b>£0.00</b>, Profit/s: <b>£1.00</b></p>
+    </div>
+  </div>
+

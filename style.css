@@ -8,21 +8,23 @@ html, body {
   .navbar {
     overflow: hidden;
     background-color: #9dcd7c;
-    height: 100px;
+    height: 60px;
+    position: fixed;
+    width: 100%;
   }
   
   .navbar h1 {
     float: left;
     font-family: 'Chewy', cursive;
     color: white;
-    font-size: 2.75em;
+    font-size: 2em;
     letter-spacing: 5px;
-    margin: 20px 0px 0px 0px;
+    margin: 5px 0px 0px 0px;
   }
   
   .navbar img {
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     float: left;
     padding: 0px 20px;
     transform: scaleX(-1);
@@ -36,12 +38,12 @@ html, body {
   }
   
   .dropdown .dropdownbtn {
-    font-size: 40px;
+    font-size: 20px;
     border: none;
     border-radius: 50%;
     color: white;
     background-color: #3b971e;
-    padding: 10px 14px;
+    padding: 7px 9px;
     outline: none;
   }
   
@@ -55,20 +57,20 @@ html, body {
   
   .dropdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 20px;
-    top: 75px;
+    top: 45px;
   }
   
   .dropdown-content a {
-    font-size: 1.25em;
+    font-size: 1em;
     float: none;
     color: black;
-    padding: 12px 16px;
+    padding: 7px 19px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -88,7 +90,7 @@ html, body {
   }
   
   #cashTitle p {
-    margin-top: 27px;
+    margin-top: 10px;
     font-size: 2em;
     color: white;
     display: inline-block;
@@ -96,17 +98,19 @@ html, body {
   }
   
   #cashTitle i {
-    font-size: 40px;
+    font-size: 26px;
     color: white;
     float: left;
     margin: auto;
-    margin-right: 10px;
-    margin-top: 30px;
+    margin-right: 12px;
+    margin-top: 18px;
   }
 
   #resources {
       float: left;
-      margin-left: 200px
+      margin-left: 5%;
+      max-width: 45%;
+      margin-top: 60px;
   }
 
   #resources img {
@@ -126,6 +130,7 @@ html, body {
   #resources .resourceNumber {
     font-size: 1.4em;
     padding: 0px 20px;
+    word-break: break-all;
   }
 
   #resources .resourceStorage {
@@ -140,7 +145,9 @@ html, body {
 
   #staff {
       float: right;
-      margin-right: 200px;
+      margin-right: 5%;
+      max-width: 45%;
+      margin-top: 60px;
   }
 
   #staff #buyStaff {
@@ -153,79 +160,139 @@ html, body {
 
   #staff p {
     display: inline-block;
+    word-break: break-all;
+    min-width: 150px;
   }
 
   #animals {
     text-align: center;
   }
-
   .animal {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.7fr 1.3fr 1fr;
+    grid-template-rows:  0.3fr 1.3fr auto;
+    grid-template-areas: "animalInfo animalShelter animalShelter animalBuy animalBuy" "animalInfo animalEnrichment animalEnrichment animalStats animalStats" "animalInfo animalRequirements animalRequirements animalRequirements animalRequirements";
     border: 4px solid black;
-    width: 60%;
-    height: 250px;
+    width: 80%;
+    min-height: 250px;
     margin: auto;
     border-radius: 10px;
-  }
-
-  .animalLeft {
-      float: left;
-      border-right: 6px solid black;
-      background: #0b73fa;
-      box-sizing: border-box;
-      height: 250px;
-      width: 250px;
-  }
-
-  .animalLeft img {
-      height: 175px;
-      background-color: white;
-      border: 3px solid black;
-      border-radius: 15px;
-  }
-
-  .animalLeft p {
-      background-color: white;
-      border: 2px solid black;
-      border-radius: 10px;
-      margin: 10px 15px;
-      padding: 5px 0px;
-      font-size: 1.2em;
-  }
-
-  .animalRight {
-      float: right;
-      width: calc(100% - 250px);
-      height: 250px;
-      background-color: #9dcd7c;
-  }
-
-  .animalRight table{
-      width: 100%;
-      text-align: left;
-      padding: 0px 28px;
-  }
-  
-  .animalRight table td{
-    width: 33%;
+    background-color: #9dcd7c;
+    margin-top: 20px;
 }
 
-  .animalRight table ul {
-      margin: 0px;
-      padding: 0px;
-      padding-left: 37px;
-  }
+  
+.animalBuy { grid-area: animalBuy; }
 
-  .animalRight img {
+.animalInfo { 
+    grid-area: animalInfo;
+    border-right: 6px solid black;
+    background: #0b73fa;
+    box-sizing: border-box;
+}
+
+.animalInfo .animalName {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 15px;
+    padding: 5px 0px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.animalInfo .animalNumber {
+    padding-top: 10px;
+    font-size: 1.4em;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    word-break: break-all;
+    padding-bottom: 10px;
+}
+
+.animalInfo img {
+    height: 175px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+}
+
+.animalEnrichment { grid-area: animalEnrichment; }
+
+.animalShelter { grid-area: animalShelter; }
+
+.animalRequirements { 
+    grid-area: animalRequirements;
+    border-top: 3px solid black;
+}
+
+.animalRequirements img {
     width: 46px;
     border-radius: 10px;
     vertical-align: middle;
+}
+
+.animalRequirements Table {
+    width: 90%;
+    margin: auto;
+}
+
+.animalRequirements ul {
+  margin: 0px;
+  list-style-position: inside;
+  text-align: left;
+}
+
+.animalStats { grid-area: animalStats; }
+
+
+.animalShelterB{
+    float: left;
+    margin: 8px;
+    padding: 5px 12px;
+    font-size: 1.2em;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #0b73fa;
+    color: black;
   }
 
-  .animalrightUp {
-      height: 135px;
+.animalShelterB:disabled {
+  color: graytext;
+  background-color: #0552b5;
+}
+
+  .animalShelterB i {
+    padding-right: 10px;
+    color: rgb(139, 66, 16);
   }
 
-  .animalBuy{
+  .animalEnrichmentB {
+    float: left;
+    margin: 8px;
+    padding: 5px 12px;
+    font-size: 1.2em;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #0b73fa;
+    color: black;
+  }
+
+  .animalEnrichmentB:disabled {
+    color: graytext;
+    background-color: #0552b5;
+  }
+
+  .animalEnrichmentB i {
+    padding-right: 10px;
+    color: yellow;
+  }
+
+  .animalBuyB {
     float: right;
     margin: 8px;
     padding: 4px 20px;
@@ -236,45 +303,17 @@ html, body {
     color: black;
   }
 
-  .animalBuy i {
+  .animalBuyB:disabled {
+    color: graytext;
+    background-color: #0552b5;
+  }
+
+  .animalBuyB i {
     padding-right: 10px;
     color: #37c027;
   }
 
-  .animalShelter{
-    float: left;
-    margin: 8px;
-    padding: 5px 12px;
-    font-size: 1.2em;
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color: #0b73fa;
-    color: black;
-  }
-
-  .animalShelter i {
-    padding-right: 10px;
-    color: rgb(139, 66, 16);
-  }
-
-  .animalEnrichment {
-    float: left;
-    margin: 8px;
-    padding: 5px 12px;
-    font-size: 1.2em;
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color: #0b73fa;
-    color: black;
-    margin-left: 30px;
-  }
-
-  .animalEnrichment i {
-    padding-right: 10px;
-    color: yellow;
-  }
-
-  .animalrightUp .increments {
+  .increments {
     background-color: white;
     border: 2px solid black;
     border-radius: 5px;
@@ -291,7 +330,29 @@ html, body {
     margin: 12px 2px 0px 2px;
   }
 
-  .animalrightDown {
-    height: 120px;
-    border-top: 2px solid black;
+  .staffIncremental {
+    height: 35px;
+    font-size: 1.2em;
+    background-color: white;
+    border: 2px solid black;
+  }
+
+
+  .animalUnlock {
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .animalUnlock button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    background: none;
+    border: 2px solid black;
   }
