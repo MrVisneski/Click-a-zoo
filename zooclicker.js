@@ -1,5 +1,5 @@
 //Game Variables
-var cash = 10000,
+var cash = 100,
 food = {
     name: 'food',
     total: 0,
